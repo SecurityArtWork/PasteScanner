@@ -1,6 +1,6 @@
 # PasteScanner
 Pastescanner is a (Golang)tool to monitor websites content for relevant information
 
-El programa no muestra nada por pantalla, pero va generado archivos en ./pastes con los pastes que no caducan, y en ./pastes/temp con los pastes con tiempo de vida.
+The programme shows nothing on terminal, it generates a file in ./pastes for each paste without expiration time, and in ./pastes/temp with certain time to live pastes.
 
-Para pasarle los parametros editar paste.conf, tiene dos etiquetas bastente descriptivas, puedes ponerle todas las claves que quieras para que filtre con ellas y puedes quitar lineas de pastesitios para que no busque en ellos (añadir no, por que no he implementado más pero en el codigo verás que es copiar, pegar y editar dos tonterias en main() y find(), despues se puede añadir al .conf).
+In order to configure it, edit paste.conf. It has two highly descriptive tags, you can add as much keywords as you want so it can filter pastes by them. It is also possible to erase/comment lines about different pastesites so they are not included in the search engine. It is not possible to add new pastesites without editing the code further, however it is quite easy as it's just writing a few lines of code in main() and find() and adding it in .conf. You're welcome to contribute!

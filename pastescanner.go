@@ -144,7 +144,7 @@ func main() {
 
 	
 	for {
-		// Lista de ultimos pastes de cada sitio
+		// Latest pastes list from every site | Lista de ultimos pastes de cada sitio
  		var lista []string
 
 		//fmt.Println("[Actualizando ultimos pastes]")
@@ -178,7 +178,7 @@ func main() {
 
 		//fmt.Println("[Revisando pastes]")
 		for i := 0; i < len(lista); i++ {
-			if notin(lista[i], visited) { //esto tiene que ser atomico para que solape links y pierda muchos D:
+			if notin(lista[i], visited) { //this has to be atomic so links are overlapped and lost D: | esto tiene que ser atomico para que solape links y pierda muchos D:
 				visited = append(visited,lista[i])
 				go find(lista[i],keys)
 			}
