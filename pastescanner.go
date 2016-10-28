@@ -116,10 +116,24 @@ func find(link string, keywords []string){
 	} 
 }
 
+func exists(path string) (bool, error) {
+	    _, err := os.Stat(path)
+	    if err == nil { return true, nil }
+	    if os.IsNotExist(err) { return false, nil }
+	    return true, err
+}
+
 func main() {	
 	//fmt.Println("[cargado configuracion]")
 	dat, _ := ioutil.ReadFile("./paste.conf")
-    
+
+	exist, _ := exists("./pastes/temp/")
+
+	if exist == false {
+		os.Mkdir("./pastes",0774)
+		os.Mkdir("./pastes/temp",0774)
+	}
+	    
 	file := strings.Split(string(dat),"\n")
 
 	var keys []string
