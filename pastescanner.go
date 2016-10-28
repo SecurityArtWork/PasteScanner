@@ -24,7 +24,7 @@ import (
 	"time"
 	"io/ioutil"
 	"net/http"
-	"xmlpath.v2"
+	"gopkg.in/xmlpath.v2"
 	"os"
 	"strconv"
 )
